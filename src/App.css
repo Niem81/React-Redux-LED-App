@@ -24,22 +24,19 @@
 }
 
 /***** LED CSS  *****/
-.clear {
-	clear: both;
-}
-
 .display-container.display-size-12 {
-	margin: 24px auto;
+	margin-bottom: 24px;
 }
-
 
 .display-container {
 	position: relative;
-	margin: 24px auto;
+	margin-right: 10px;
+  float: left;
 }
 
 .display-container div.segment-x,
-.display-container div.segment-y {
+.display-container div.segment-y,
+.display-container div.segment-xdot {
 	position: absolute;
 }
 
@@ -56,28 +53,43 @@
 .display-container.display-size-12 .segment-x {
 	width: 72px;
 	left: 13px;
-	border-bottom: 12px solid #005ce6;
+	border-bottom: 12px solid #000;
 	border-left: 12px solid transparent;
 	border-right: 12px solid transparent;
-  opacity: 0.2;
 }
 
 .display-container.display-size-12 .segment-x .segment-border {
 	top: 12px;
 	left: -12px;
 	right: -12px;
-	border-top: 12px solid #005ce6;
+	border-top: 12px solid #000;
 	border-left: 12px solid transparent;
 	border-right: 12px solid transparent;
+}
+
+.display-container.display-size-12 .segment-xdot {
+  width: 18px;
+  left: 10px;
+  border-bottom: 12px solid #000;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.display-container.display-size-12 .segment-xdot .segment-border {
+	top: 12px;
+	left: -4px;
+	right: -4px;
+	border-top: 12px solid #000;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
 }
 
 .display-container.display-size-12 .segment-y {
 	height: 72px;
 	width: 0;
-	border-right: 12px solid #005ce6;
+	border-right: 12px solid #000;
 	border-top: 12px solid transparent;
 	border-bottom: 12px solid transparent;
-  opacity: 0.2;
 }
 
 .display-container.display-size-12 .segment-y .segment-border {
@@ -85,7 +97,7 @@
 	left: 12px;
 	height: 72px;
 	margin-top: -12px;
-	border-left: 12px solid #005ce6;
+	border-left: 12px solid #000;
 	border-top: 12px solid transparent;
 	border-bottom: 12px solid transparent;
 }
@@ -122,44 +134,48 @@
 	top: 98px;
 }
 
+.display-container.display-size-12 .segment-dot {
+  top: 196px;
+}
+
 .display-no-1 .segment-a,
 .display-no-1 .segment-d,
 .display-no-1 .segment-e,
 .display-no-1 .segment-f,
 .display-no-1 .segment-g {
 	/*display: none;*/
-	opacity: 1;
+	opacity: 0.1;
 	filter: alpha(opacity=10);
 }
 
 .display-no-2 .segment-c,
 .display-no-2 .segment-f {
 	/*display: none;*/
-	opacity: 1;
+	opacity: 0.1;
 }
 
 .display-no-3 .segment-e,
 .display-no-3 .segment-f {
 	/*display: none;*/
-	opacity: 1;
+	opacity: 0.1;
 }
 
 .display-no-4 .segment-a,
 .display-no-4 .segment-d,
 .display-no-4 .segment-e {
 	/*display: none;*/
-	opacity: 1;
+	opacity: 0.1;
 }
 
 .display-no-5 .segment-b,
 .display-no-5 .segment-e {
 	/*display: none;*/
-	opacity: 1;
+	opacity: 0.1;
 }
 
 .display-no-6 .segment-b {
 	/*display: none;*/
-	opacity: 1;
+	opacity: 0.1;
 }
 
 .display-no-7 .segment-d,
@@ -167,19 +183,19 @@
 .display-no-7 .segment-f,
 .display-no-7 .segment-g {
 	/*display: none;*/
-	opacity: 1;
+	opacity: 0.1;
 }
 
 .display-no-8 {}
 
 .display-no-9 .segment-e {
 	/*display: none;*/
-	opacity: 1;
+	opacity: 0.1;
 }
 
 .display-no-0 .segment-g {
 	/*display: none;*/
-	opacity: 1;
+	opacity: 0.1;
 }
 
 /* clock */
@@ -188,27 +204,20 @@
 	margin-right: 60px;
 }
 
-#vertical-center {
-	position: absolute;
-	height: 0;
-	top: 50%;
-	left: 50%
+.vertical-center {
+  display: block;
+  position: relative;
+	width: 100%;
+	height: 300px;
 }
 
-#clock-container {
-	margin-top: -110px;
-	margin-left: -462px;
-	width: 924px;
-	height: 220px;
+.led-container {
+  margin: 5px auto;
+  padding: 20px 0;
+  position: relative;
+  display: inline-block;
 }
 
-#clock-container .display-container:last-child {
-	margin: 0;
-}
 
-#clock-container:after {
-	display: block;
-	content: '.';
-	visibility: hidden;
-	clear: both;
-}
+/*
+	border-left: 12px solid #005ce6;*/
