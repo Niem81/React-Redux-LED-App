@@ -4,24 +4,16 @@ import classnames from 'classnames'
 
 class LedView extends Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      newCSS : ''
-    }
-  }
-
-
-
   render () {
     if (this.props.numb) {
       console.log(this.props.numb)
     }
-    let classes = classnames(this.props.numb.inputCSS)
+    let ledClasses = classnames(this.props.numb.inputCSS)
+    let dotClasses = classnames(this.props.numb.dotCSS)
     return (
       <div className="vertical-center">
       <div className="led-container">
-        <div className={classes}>
+        <div className={ledClasses}>
           {this.props.numb.number}
           <div className="segment-x segment-a"><span className="segment-border">a</span></div>
           <div className="segment-y segment-b"><span className="segment-border">b</span></div>
@@ -31,8 +23,8 @@ class LedView extends Component {
           <div className="segment-y segment-f"><span className="segment-border">f</span></div>
           <div className="segment-x segment-g"><span className="segment-border">g</span></div>
         </div>
-        <div className="display-container display-size-12">
-    			<div className="segment-xdot segment-dot"><span className="segment-border"></span></div>
+        <div className={dotClasses}>
+    			<div className="segment-xdot segment-dot"><span className="segment-border">DP</span></div>
     		</div>
       </div>
       </div>

@@ -53,7 +53,7 @@
 .display-container.display-size-12 .segment-x {
 	width: 72px;
 	left: 13px;
-	border-bottom: 12px solid #000;
+	border-bottom: 12px solid #005ce6;
 	border-left: 12px solid transparent;
 	border-right: 12px solid transparent;
 }
@@ -62,7 +62,7 @@
 	top: 12px;
 	left: -12px;
 	right: -12px;
-	border-top: 12px solid #000;
+	border-top: 12px solid #005ce6;
 	border-left: 12px solid transparent;
 	border-right: 12px solid transparent;
 }
@@ -70,7 +70,7 @@
 .display-container.display-size-12 .segment-xdot {
   width: 18px;
   left: 10px;
-  border-bottom: 12px solid #000;
+  border-bottom: 12px solid #005ce6;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
 }
@@ -79,7 +79,7 @@
 	top: 12px;
 	left: -4px;
 	right: -4px;
-	border-top: 12px solid #000;
+	border-top: 12px solid #005ce6;
 	border-left: 5px solid transparent;
 	border-right: 5px solid transparent;
 }
@@ -87,7 +87,7 @@
 .display-container.display-size-12 .segment-y {
 	height: 72px;
 	width: 0;
-	border-right: 12px solid #000;
+	border-right: 12px solid #005ce6;
 	border-top: 12px solid transparent;
 	border-bottom: 12px solid transparent;
 }
@@ -97,7 +97,7 @@
 	left: 12px;
 	height: 72px;
 	margin-top: -12px;
-	border-left: 12px solid #000;
+	border-left: 12px solid #005ce6;
 	border-top: 12px solid transparent;
 	border-bottom: 12px solid transparent;
 }
@@ -142,38 +142,44 @@
 .display-no-1 .segment-d,
 .display-no-1 .segment-e,
 .display-no-1 .segment-f,
-.display-no-1 .segment-g {
+.display-no-1 .segment-g,
+.display-no-1 .segment-xdot {
 	/*display: none;*/
 	opacity: 0.1;
 	filter: alpha(opacity=10);
 }
 
 .display-no-2 .segment-c,
-.display-no-2 .segment-f {
+.display-no-2 .segment-f,
+.display-no-2 .segment-xdot {
 	/*display: none;*/
 	opacity: 0.1;
 }
 
 .display-no-3 .segment-e,
-.display-no-3 .segment-f {
+.display-no-3 .segment-f,
+.display-no-3 .segment-xdot {
 	/*display: none;*/
 	opacity: 0.1;
 }
 
 .display-no-4 .segment-a,
 .display-no-4 .segment-d,
-.display-no-4 .segment-e {
+.display-no-4 .segment-e,
+.display-no-4 .segment-xdot {
 	/*display: none;*/
 	opacity: 0.1;
 }
 
 .display-no-5 .segment-b,
-.display-no-5 .segment-e {
+.display-no-5 .segment-e,
+.display-no-5 .segment-xdot {
 	/*display: none;*/
 	opacity: 0.1;
 }
 
-.display-no-6 .segment-b {
+.display-no-6 .segment-b,
+.display-no-6 .segment-xdot {
 	/*display: none;*/
 	opacity: 0.1;
 }
@@ -181,19 +187,38 @@
 .display-no-7 .segment-d,
 .display-no-7 .segment-e,
 .display-no-7 .segment-f,
-.display-no-7 .segment-g {
+.display-no-7 .segment-g,
+.display-no-7 .segment-xdot,
+.display-no-7 .segment-dot  {
 	/*display: none;*/
 	opacity: 0.1;
 }
 
 .display-no-8 {}
 
-.display-no-9 .segment-e {
+.display-no-8 .segment-xdot {
+  opacity: 0.1;
+}
+
+.display-no-9 .segment-e,
+.display-no-9 .segment-xdot {
 	/*display: none;*/
 	opacity: 0.1;
 }
 
-.display-no-0 .segment-g {
+.display-no-0 .segment-g,
+.display-no-0 .segment-xdot {
+	/*display: none;*/
+	opacity: 0.1;
+}
+
+.display-dot .segment-a,
+.display-dot .segment-b,
+.display-dot .segment-c,
+.display-dot .segment-d,
+.display-dot .segment-e,
+.display-dot .segment-f,
+.display-dot .segment-g {
 	/*display: none;*/
 	opacity: 0.1;
 }

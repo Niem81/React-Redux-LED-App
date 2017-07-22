@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {selectNumber} from '../actions/index'
+import {selectNumber, selectDot} from '../actions/index'
 
 class NumberInput extends Component {
 
@@ -17,7 +17,16 @@ class NumberInput extends Component {
   handleNumber() {
     console.log(this.state);
     var number = this.state.newInput
-    this.props.selectNumber(number);
+    if (isNaN(number)){
+      if (number === ".") {
+        console.log("ITS a dot");
+        this.props.selectDot(number);
+      } else {
+        alert("Debes ingresar un número");
+      }
+    } else {
+      this.props.selectNumber(number);
+    }
   }
 
   render () {
@@ -39,7 +48,7 @@ function mapStateToProps(state){
 }
 
 function matchDispatchToProps(dispatch){
-  return bindActionCreators({selectNumber:selectNumber}, dispatch);
+  return bindActionCreators(Object.assign({selectNumber:selectNumber}, {selectDot:selectDot}), dispatch);
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(NumberInput);
