@@ -1,8 +1,8 @@
 
-export const NEW_NUMBER = 'NEW_NUMBER';
+// export const NEW_NUMBER = 'NEW_NUMBER';
 export const NUMBER_SELECTED = 'NUMBER_SELECTED';
-export const FETCH_NUMBER = 'FETCH_NUMBER';
-export const ENTER_INPUT = 'ENTER_INPUT';
+// export const FETCH_NUMBER = 'FETCH_NUMBER';
+// export const ENTER_INPUT = 'ENTER_INPUT';
 export const DOT_SELECTED = 'DOT_SELECTED';
 
 export const selectNumber = (number) => {

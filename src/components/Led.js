@@ -1,20 +1,25 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
+// import {connect} from 'react-redux'
 import classnames from 'classnames'
 
-class LedView extends Component {
+class Led extends Component {
 
   render () {
-    if (this.props.numb) {
-      console.log(this.props.numb)
-    }
-    let ledClasses = classnames(this.props.numb.inputCSS)
-    let dotClasses = classnames(this.props.numb.dotCSS)
+    const { numb } = this.props
+    console.log(numb)
+    const { inputCSS, dotCSS } = numb
+
+    // if (this.props.numb) {
+    //   console.log(this.props.numb)
+    // }
+    let ledClasses = classnames(inputCSS) //classnames(this.props.numb.inputCSS)
+    let dotClasses = classnames(dotCSS)
+
     return (
       <div className="vertical-center">
       <div className="led-container">
         <div className={ledClasses}>
-          {this.props.numb.number}
+          <p>{numb.number}</p>
           <div className="segment-x segment-a"><span className="segment-border">a</span></div>
           <div className="segment-y segment-b"><span className="segment-border">b</span></div>
           <div className="segment-y segment-c"><span className="segment-border">c</span></div>
@@ -32,11 +37,12 @@ class LedView extends Component {
   }
 }
 
-function mapStateToProps(state){
-  return {
-    numb: state.activeNumber,
-    segments: state.segments
-  }
-}
+// function mapStateToProps(state){
+//   return {
+//     numb: state.activeNumber,
+//     segments: state.segments
+//   }
+// }
 
-export default connect(mapStateToProps)(LedView)
+// export default connect(mapStateToProps)(Led)
+export default Led
