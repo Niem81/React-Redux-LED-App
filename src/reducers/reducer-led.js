@@ -1,4 +1,4 @@
-import {NUMBER_SELECTED, DOT_SELECTED} from '../actions/index'
+import {NUMBER_SELECTED, DOT_SELECTED, RESET_SELECTED} from '../actions/index'
 
 const INITIAL_STATE = {
   number: '',
@@ -22,6 +22,9 @@ export default function (state=INITIAL_STATE, action){
         inputCSS: 'display-container display-size-12 display-dot',
         dotCSS: 'display-container display-size-12'
       }
+
+    case RESET_SELECTED:
+      return INITIAL_STATE
 
     default:
     return state;

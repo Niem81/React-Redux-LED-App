@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {selectNumber, selectDot} from '../actions/index'
+import {selectNumber, selectDot, resetLed} from '../actions/index'
 import {bindActionCreators} from 'redux'
 
 import Header from '../components/Header'
 import Led from '../components/Led'
 import NumberInput from '../components/NumberInput'
+import Footer from '../components/Footer'
 import logo from '../logo.svg';
 import '../App.css';
 
@@ -17,20 +18,28 @@ class LedView extends Component {
   }
 
   componentWillMount(){
-    console.log("Mounting  Component");
+    console.log("Mounting  Component")
+    console.log(this.state)
   }
 
   handleInput (number){
-    if (isNaN(number)){
-      if (number === ".") {
-        console.log("ITS a dot");
-        this.props.selectDot(number);
-      } else {
-        alert("Debes ingresar un número");
-      }
+    // Check if reset
+    if (number === 'reset') {
+      this.props.resetLed()
     } else {
-      this.props.selectNumber(number);
+      // Check if it is not number
+      if (isNaN(number)){
+        if (number === ".") {
+          console.log("ITS a dot");
+          this.props.selectDot(number);
+        } else {
+          alert("Debes ingresar un número");
+        }
+      } else {
+        this.props.selectNumber(number);
+      }
     }
+
   }
 
   render (){
@@ -41,6 +50,7 @@ class LedView extends Component {
         <Header logo={logo}/>
         <NumberInput onChange={this.handleInput} />
         <Led numb={numb}/>
+        <Footer/>
       </div>
     )
   }
@@ -54,7 +64,7 @@ function mapStateToProps(state){
 }
 
 function matchDispatchToProps(dispatch){
-  return bindActionCreators(Object.assign({selectNumber:selectNumber}, {selectDot:selectDot}), dispatch);
+  return bindActionCreators(Object.assign({selectNumber:selectNumber}, {selectDot:selectDot}, {resetLed:resetLed}), dispatch);
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(LedView)

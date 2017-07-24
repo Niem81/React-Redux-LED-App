@@ -1,29 +1,10 @@
 import React, {Component} from 'react'
-import {Field, reduxform} from 'redux-form'
+// import {Field, reduxform} from 'redux-form'
 import {Form, ControlLabel, Button, FormControl, FormGroup} from 'react-bootstrap'
 // import {bindActionCreators} from 'redux'
 // import {connect} from 'react-redux'
 // import {selectNumber, selectDot} from '../actions/index'
-//
-// const formInstance = (
-//   <Form inline>
-//     <FormGroup controlId="formInlineNumber">
-//       <ControlLabel>Ingrese Número: </ControlLabel>
-//       {' '}
-//       <FormControl type="text"
-//                   placeholder="Numero del 0 a 9"
-//                   value={this.state.newInput}
-//                   onChange={e => this.setState({newInput: e.target.value})}
-//                 />
-//     </FormGroup>
-//     {' '}
-//     <Button type="submit"
-//             bsStyle="success"
-//             onClick={this.handleNumber}>
-//       Mostrar
-//     </Button>
-//   </Form>
-// );
+
 
 class NumberInput extends Component {
 
@@ -32,7 +13,7 @@ class NumberInput extends Component {
     this.state = {
       newInput: ''
     }
-
+    this.handleReset = this.handleReset.bind(this)
     this.handleNumber = this.handleNumber.bind(this)
   }
 
@@ -52,9 +33,15 @@ class NumberInput extends Component {
     // }
   }
 
-
+  handleReset() {
+    const number = "reset"
+    this.setState({newInput: ''})
+    this.props.onChange(number)
+  }
 
   render () {
+    const {newInput} = this.state
+
     return (
       <div>
         <Form inline>
@@ -63,15 +50,21 @@ class NumberInput extends Component {
             {' '}
             <FormControl type="text"
                         placeholder="Numero del 0 a 9"
-                        value={this.state.newInput}
+                        value={newInput}
                         onChange={e => this.setState({newInput: e.target.value})}
                       />
           </FormGroup>
           {' '}
           <Button
-                  bsStyle="success"
+                  bsStyle="primary"
                   onClick={this.handleNumber}>
             Mostrar
+          </Button>
+          {' '}
+          <Button
+                  bsStyle="danger"
+                  onClick={this.handleReset}>
+            Reset
           </Button>
         </Form>
         {/* <p>-</p>
