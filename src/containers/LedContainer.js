@@ -10,6 +10,8 @@ import Footer from '../components/Footer'
 import logo from '../logo.svg';
 import '../App.css';
 
+const SweetAlert = require('react-swal');
+
 class LedView extends Component {
 
   constructor(props){
@@ -33,6 +35,10 @@ class LedView extends Component {
           console.log("ITS a dot");
           this.props.selectDot(number);
         } else {
+          // <SweetAlert isOpen={true}
+          //   type="warning"
+          //   text="Debes ingresar un número"
+          //   confirmButtonText="Yup" />
           alert("Debes ingresar un número");
         }
       } else {

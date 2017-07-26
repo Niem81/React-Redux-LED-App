@@ -12,7 +12,7 @@ class Header extends Component {
         </div>
         <div className="container">
           <p className="App-intro">
-            Presentacion de App que muestra un número en formato LED.<code>src/App.js</code>
+        Presentacion de App que muestra un número en formato LED.   
           </p>
         </div>
       </div>

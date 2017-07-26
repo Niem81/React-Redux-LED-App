@@ -15,6 +15,7 @@ class NumberInput extends Component {
     }
     this.handleReset = this.handleReset.bind(this)
     this.handleNumber = this.handleNumber.bind(this)
+    this.handleInput = this.handleInput.bind(this)
   }
 
   handleNumber() {
@@ -37,6 +38,14 @@ class NumberInput extends Component {
     const number = "reset"
     this.setState({newInput: ''})
     this.props.onChange(number)
+  }
+
+  handleInput (e) {
+    console.log(e.target.value)
+    this.setState({newInput:e.target.value});
+    // var number = this.state.newInput
+    // console.log(number)
+    this.props.onChange(e.target.value);
   }
 
   render () {
@@ -67,6 +76,9 @@ class NumberInput extends Component {
             Reset
           </Button>
         </Form>
+        <div className="slider-container">
+          <input id="ledNumb" type="range" min="0" max="9" value={this.state.newInput} onChange={this.handleInput}/>
+        </div>
         {/* <p>-</p>
         <label htmlFor="ledNumb">Ingrese Número:</label>
         <input id="ledNumb" type="text" value={this.state.newInput} onChange={e => this.setState({newInput: e.target.value})}/>
