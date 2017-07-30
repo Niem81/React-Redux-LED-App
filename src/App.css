@@ -28,7 +28,7 @@
 
 /***** FOOTER *******/
 .footer {
-  position:fixed;
+  position:relative;
   left:0px;
   bottom:0px;
   width:100%;
@@ -48,13 +48,13 @@
   float: left;
 }
 
-.display-container div.segment-x,
-.display-container div.segment-y,
-.display-container div.segment-xdot {
+.display-container .segment-x,
+.display-container .segment-y,
+.display-container .segment-xdot {
 	position: absolute;
 }
 
-.display-container span.segment-border {
+.display-container .segment-border {
 	display: block;
 	position: absolute;
 }
@@ -70,6 +70,7 @@
 	border-bottom: 12px solid #005ce6;
 	border-left: 12px solid transparent;
 	border-right: 12px solid transparent;
+  /*opacity: 0.1;*/
 }
 
 .display-container.display-size-12 .segment-x .segment-border {
@@ -104,6 +105,7 @@
 	border-right: 12px solid #005ce6;
 	border-top: 12px solid transparent;
 	border-bottom: 12px solid transparent;
+  /*opacity: 0.1;*/
 }
 
 .display-container.display-size-12 .segment-y .segment-border {
@@ -152,91 +154,17 @@
   top: 150px;
 }
 
-.display-no-1 .segment-a,
-.display-no-1 .segment-d,
-.display-no-1 .segment-e,
-.display-no-1 .segment-f,
-.display-no-1 .segment-g,
-.display-no-1 .segment-xdot {
-	/*display: none;*/
-	opacity: 0.1;
-	filter: alpha(opacity=10);
-}
-
-.display-no-2 .segment-c,
-.display-no-2 .segment-f,
-.display-no-2 .segment-xdot {
-	/*display: none;*/
-	opacity: 0.1;
-}
-
-.display-no-3 .segment-e,
-.display-no-3 .segment-f,
-.display-no-3 .segment-xdot {
-	/*display: none;*/
-	opacity: 0.1;
-}
-
-.display-no-4 .segment-a,
-.display-no-4 .segment-d,
-.display-no-4 .segment-e,
-.display-no-4 .segment-xdot {
-	/*display: none;*/
-	opacity: 0.1;
-}
-
-.display-no-5 .segment-b,
-.display-no-5 .segment-e,
-.display-no-5 .segment-xdot {
-	/*display: none;*/
-	opacity: 0.1;
-}
-
-.display-no-6 .segment-b,
-.display-no-6 .segment-xdot {
-	/*display: none;*/
-	opacity: 0.1;
-}
-
-.display-no-7 .segment-d,
-.display-no-7 .segment-e,
-.display-no-7 .segment-f,
-.display-no-7 .segment-g,
-.display-no-7 .segment-xdot,
-.display-no-7 .segment-dot  {
-	/*display: none;*/
-	opacity: 0.1;
-}
-
-.display-no-8 {}
-
-.display-no-8 .segment-xdot {
+.led-off .segment-a,
+.led-off .segment-b,
+.led-off .segment-c,
+.led-off .segment-d,
+.led-off .segment-e,
+.led-off .segment-f,
+.led-off .segment-g,
+.led-off .segment-dot  {
   opacity: 0.1;
+  border-color: #55ffee;
 }
-
-.display-no-9 .segment-e,
-.display-no-9 .segment-xdot {
-	/*display: none;*/
-	opacity: 0.1;
-}
-
-.display-no-0 .segment-g,
-.display-no-0 .segment-xdot {
-	/*display: none;*/
-	opacity: 0.1;
-}
-
-.display-dot .segment-a,
-.display-dot .segment-b,
-.display-dot .segment-c,
-.display-dot .segment-d,
-.display-dot .segment-e,
-.display-dot .segment-f,
-.display-dot .segment-g {
-	/*display: none;*/
-	opacity: 0.1;
-}
-
 
 #display-2, #display-4 {
 	margin-right: 60px;
@@ -244,7 +172,7 @@
 
 .vertical-center {
   display: block;
-  position: fixed;
+  position: relative;
 	width: 100%;
 	height: 300px;
 }

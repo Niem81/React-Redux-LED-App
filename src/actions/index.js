@@ -1,8 +1,4 @@
-
-// export const NEW_NUMBER = 'NEW_NUMBER';
 export const NUMBER_SELECTED = 'NUMBER_SELECTED';
-// export const FETCH_NUMBER = 'FETCH_NUMBER';
-// export const ENTER_INPUT = 'ENTER_INPUT';
 export const DOT_SELECTED = 'DOT_SELECTED';
 export const RESET_SELECTED = 'RESET_SELECTED';
 
@@ -12,7 +8,7 @@ export const selectNumber = (number) => {
         type: NUMBER_SELECTED,
         payload: number
   }
-}
+};
 
 export const selectDot = (number) => {
   console.log("Valor ingresado: ", number);
@@ -20,7 +16,7 @@ export const selectDot = (number) => {
         type: DOT_SELECTED,
         payload: number
   }
-}
+};
 
 export const resetLed = () => {
   console.log("Volviendo a Nada");
@@ -28,4 +24,4 @@ export const resetLed = () => {
         type: RESET_SELECTED,
         payload: ''
   }
-}
+};
