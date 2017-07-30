@@ -7,21 +7,21 @@ export const selectNumber = (number) => {
   return {
         type: NUMBER_SELECTED,
         payload: number
-  }
-};
+  };
+}
 
 export const selectDot = (number) => {
   console.log("Valor ingresado: ", number);
   return {
         type: DOT_SELECTED,
         payload: number
-  }
-};
+  };
+}
 
 export const resetLed = () => {
   console.log("Volviendo a Nada");
   return {
         type: RESET_SELECTED,
         payload: ''
-  }
-};
+  };
+}

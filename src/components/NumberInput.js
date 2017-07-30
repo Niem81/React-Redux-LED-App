@@ -4,33 +4,33 @@ import {Form, ControlLabel, Button, FormControl, FormGroup} from 'react-bootstra
 
 class NumberInput extends Component {
 
-  constructor () {
+  constructor() {
     super();
     this.handleReset = this.handleReset.bind(this);
     this.handleInput = this.handleInput.bind(this);
   }
 
-  handleReset () {
+  handleReset() {
     this.props.onReset();
   }
 
-  handleInput (e) {
+  handleInput(e) {
     console.log(e.target.value);
     this.props.onChange(e.target.value);
   }
 
-  componentWillMount () {
+  componentWillMount() {
     console.log("Mounting  Component");
     console.log(this.state);
     console.log(this.props);
   }
 
-  componentDidUpdate () {
+  componentDidUpdate() {
     console.log(this.state);
     console.log(this.props);
   }
 
-  render () {
+  render() {
     const {value} = this.props;
 
     return (
@@ -39,12 +39,13 @@ class NumberInput extends Component {
           <FormGroup controlId="formInlineNumber">
             <ControlLabel>Ingrese Número: </ControlLabel>
             {' '}
-            <FormControl type="text"
-                        placeholder="Numero del 0 a 9"
-                        value={value}
-                        onChange={this.handleInput}
-                        // onChange={e => this.props({value: e.target.value})}
-                      />
+            <FormControl
+              type="text"
+              placeholder="Numero del 0 a 9"
+              value={value}
+              onChange={this.handleInput}
+              // onChange={e => this.props({value: e.target.value})}
+            />
           </FormGroup>
           {' '}
           {/* <Button
@@ -54,13 +55,20 @@ class NumberInput extends Component {
           </Button>
           {' '} */}
           <Button
-                  bsStyle="success"
-                  onClick={this.handleReset}>
+            bsStyle="success"
+            onClick={this.handleReset}
+          >
             Reset
           </Button>
         </Form>
         <div className="slider-container">
-          <input id="ledNumb" type="range" min="0" max="9" value={value} onChange={this.handleInput}/>
+          <input
+            type="range"
+            min="0"
+            max="9"
+            value={value}
+            onChange={this.handleInput}
+          />
         </div>
       </div>
     )

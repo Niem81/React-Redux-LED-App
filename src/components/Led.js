@@ -1,19 +1,13 @@
-import React, {Component} from 'react';
-import classnames from 'classnames';
+import React from 'react';
 
-class Led extends Component {
-  render () {
-    console.log(this.props);
-    const {status,letter,segment} = this.props;
-
-    return (
-      <div className={status}>
-        <div className={`${segment} segment-${letter}`}>
-          <span className="segment-border">{letter}</span>
-        </div>
+function Led({ status,letter,segment }) {
+  return (
+    <div className={status}>
+      <div className={`${segment} segment-${letter}`}>
+        <span className="segment-border">{letter}</span>
       </div>
-    )
-  }
+    </div>
+  );
 }
 
 export default Led;

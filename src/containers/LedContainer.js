@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {selectNumber, selectDot, resetLed} from '../actions/index';
+import * as actionCreators from '../actions/index';
 import {bindActionCreators} from 'redux';
 
 import Header from '../components/Header';
@@ -14,8 +14,9 @@ import '../App.css';
 
 class LedView extends Component {
 
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
+    console.log(this.props);
     this.handleInput = this.handleInput.bind(this);
   }
 
@@ -34,7 +35,7 @@ class LedView extends Component {
     if (isNaN(number)) {
       if (number === ".") {
         console.log("ITS a dot");
-        this.props.selectDot(number);
+        this.props.actions.selectDot(number);
       } else {
         // <SweetAlert isOpen={true}
         //   type="warning"
@@ -43,34 +44,35 @@ class LedView extends Component {
         alert("Debes ingresar un número");
       }
     } else {
-      this.props.selectNumber(number);
+      this.props.actions.selectNumber(number);
     }
   }
 
-  render () {
+  render() {
     console.log(this.props);
     const {inputValue} = this.props.numb;
 
     return (
       <div className="App">
         <Header logo={logo}/>
-        <NumberInput value={inputValue} onChange={this.handleInput} onReset={() => { this.props.resetLed() }} />
+        <NumberInput
+          value={inputValue}
+          onChange={this.handleInput}
+          onReset={() => { this.props.actions.resetLed() }}
+        />
         <LedDisplay numb={this.props.numb}/>
         <Footer/>
       </div>
-    )
+    );
   }
 }
 
 function mapStateToProps(state){
-  return {
-    numb: state.activeNumber,
-    segments: state.segments
-  }
+  return { numb: state.activeNumber };
 }
 
 function matchDispatchToProps(dispatch){
-  return bindActionCreators(Object.assign({selectNumber:selectNumber}, {selectDot:selectDot}, {resetLed:resetLed}), dispatch);
+  return { actions: bindActionCreators(actionCreators, dispatch) };
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(LedView);
