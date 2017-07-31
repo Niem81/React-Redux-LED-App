@@ -1,156 +1,151 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
+.app-logo {
+  animation: app-logo-spin infinite 20s linear;
   height: 80px;
 }
 
-.App-header {
-  height: 170px;
+.app-header {
   background-color: #223;
-  /*background-size: auto;
-  background: url("./infinity.jpg") no-repeat center;*/
-  padding: 20px;
   color: white;
+  height: 170px;
+  padding: 20px;
 }
 
-.App-intro {
-  padding: 30px;
+.app-intro {
   font-size: large;
+  padding: 30px;
 }
 
-@keyframes App-logo-spin {
+@keyframes app-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
 /***** FOOTER *******/
 .footer {
-  position:fixed;
-  left:0px;
-  bottom:0px;
-  width:100%;
-  height: 250px;
-  background-size: cover;
   background: url("./spiderback.jpg") no-repeat center;
+  background-size: cover;
+  bottom: 0px;
+  height: 250px;
+  left: 0px;
+  position: fixed;
+  width: 100%;
 }
 
 /***** LED CSS  *****/
-.display-container.display-size-12 {
-	margin-bottom: 24px;
-}
 
 .display-container {
-	position: relative;
-	margin-right: 10px;
-  float: left;
+  display: inline-block;
+  position: relative;
 }
 
-.display-container .segment-x,
-.display-container .segment-y,
-.display-container .segment-xdot {
+.leds {
+  float: left;
+  height: 220px;
+	margin: 0 10px 24px 0;
+	position: relative;
+  width: 110px;
+}
+
+.leds .segment-x,
+.leds .segment-y,
+.leds .segment-xdot {
 	position: absolute;
 }
 
-.display-container .segment-border {
+.leds .segment-border {
 	display: block;
 	position: absolute;
 }
 
-.display-container.display-size-12 {
-	width: 110px;
-	height: 220px;
-}
-
-.display-container.display-size-12 .segment-x {
-	width: 72px;
-	left: 13px;
+.leds .segment-x {
 	border-bottom: 12px solid #005ce6;
 	border-left: 12px solid transparent;
 	border-right: 12px solid transparent;
-  /*opacity: 0.1;*/
+  left: 13px;
+  width: 72px;
 }
 
-.display-container.display-size-12 .segment-x .segment-border {
+.leds .segment-x .segment-border {
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #005ce6;
+  left: -12px;
+  right: -12px;
 	top: 12px;
-	left: -12px;
-	right: -12px;
-	border-top: 12px solid #005ce6;
-	border-left: 12px solid transparent;
-	border-right: 12px solid transparent;
 }
 
-.display-container.display-size-12 .segment-xdot {
-  width: 26px;
-  left: 10px;
+.leds .segment-xdot {
   border-bottom: 12px solid #005ce6;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
+  left: 10px;
+  width: 26px;
 }
 
-.display-container.display-size-12 .segment-xdot .segment-border {
+.leds .segment-xdot .segment-border {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 12px solid #005ce6;
+  left: -4px;
+  right: -4px;
 	top: 12px;
-	left: -4px;
-	right: -4px;
-	border-top: 12px solid #005ce6;
-	border-left: 5px solid transparent;
-	border-right: 5px solid transparent;
 }
 
-.display-container.display-size-12 .segment-y {
+.leds .segment-y {
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid #005ce6;
+  border-top: 12px solid transparent;
 	height: 72px;
 	width: 0;
-	border-right: 12px solid #005ce6;
-	border-top: 12px solid transparent;
-	border-bottom: 12px solid transparent;
-  /*opacity: 0.1;*/
 }
 
-.display-container.display-size-12 .segment-y .segment-border {
-	position: relative;
-	left: 12px;
-	height: 72px;
-	margin-top: -12px;
-	border-left: 12px solid #005ce6;
-	border-top: 12px solid transparent;
-	border-bottom: 12px solid transparent;
+.leds .segment-y .segment-border {
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #005ce6;
+  border-top: 12px solid transparent;
+  height: 72px;
+  left: 12px;
+  margin-top: -12px;
+  position: relative;
 }
 
-.display-container.display-size-12 .segment-a {
+.leds .segment-a {
 	top: 0;
 }
 
-.display-container.display-size-12 .segment-b {
+.leds .segment-b {
 	top: 13px;
 	left: 75px;
 }
 
-.display-container.display-size-12 .segment-c {
+.leds .segment-c {
 	top: 88px;
 	left: 75px;
 }
 
-.display-container.display-size-12 .segment-d {
+.leds .segment-d {
 	top: 150px;
 }
 
-.display-container.display-size-12 .segment-e {
+.leds .segment-e {
 	top: 88px;
 	left: 0px;
 }
 
-.display-container.display-size-12 .segment-f {
+.leds .segment-f {
 	top: 13px;
 	left: 0px;
 }
 
-.display-container.display-size-12 .segment-g {
+.leds .segment-g {
 	top: 75px;
 }
 
-.display-container.display-size-12 .segment-dot {
+.leds .segment-dot {
   top: 150px;
 }
 
@@ -163,25 +158,12 @@
 .led-off .segment-g,
 .led-off .segment-dot  {
   opacity: 0.1;
-  border-color: #55ffee;
-}
-
-#display-2, #display-4 {
-	margin-right: 60px;
 }
 
 .vertical-center {
-  display: block;
-  position: relative;
+  height: 300px;
+  padding: 10px 0;
 	width: 100%;
-	height: 300px;
-}
-
-.led-container {
-  margin: 5px auto;
-  padding: 20px 0;
-  position: relative;
-  display: inline-block;
 }
 
 /******* SLIDER *******/

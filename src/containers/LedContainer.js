@@ -53,7 +53,7 @@ class LedView extends Component {
     const {inputValue} = this.props.numb;
 
     return (
-      <div className="App">
+      <div className="app">
         <Header logo={logo}/>
         <NumberInput
           value={inputValue}

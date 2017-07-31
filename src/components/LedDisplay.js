@@ -13,8 +13,8 @@ class LedDisplay extends Component {
 
     return (
       <div className="vertical-center">
-        <div className="led-container">
-          <div className="display-container display-size-12">
+        <div className="display-container">
+          <div className="leds">
             {Object.entries(Letter).map( ([key, value]) =>
               (
                 <Led
@@ -26,7 +26,7 @@ class LedDisplay extends Component {
               ))
             }
           </div>
-          <div className="display-container display-size-12">
+          <div className="leds">
       			<div className={ledDot}>
               <div className="segment-xdot segment-dot">
                 <span className="segment-border">DP</span>
@@ -35,7 +35,7 @@ class LedDisplay extends Component {
       		</div>
         </div>
       </div>
-    )
+    );
   }
 }
 
